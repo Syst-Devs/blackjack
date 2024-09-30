@@ -10,6 +10,8 @@ public class SystdevsApplication {
 		SpringApplication.run(SystdevsApplication.class, args);
 
 		System.out.println("Hello, World!");
+
+		System.out.println("Test");
 		
 	}
 
