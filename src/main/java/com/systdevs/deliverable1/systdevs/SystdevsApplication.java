@@ -9,6 +9,7 @@ public class SystdevsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SystdevsApplication.class, args);
 
+		System.out.println("Hello, World!");
 		
 	}
 
