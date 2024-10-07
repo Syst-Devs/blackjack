@@ -3,7 +3,7 @@
  * Students can modify and extend to implement their game.
  * Add your name as an author and the date!
  */
-package ca.sheridancollege.project;
+package com.systdevs.deliverable1;
 
 import java.util.ArrayList;
 
@@ -49,6 +49,10 @@ public abstract class Game {
      * Play the game. This might be one method or many method calls depending on your game.
      */
     public abstract void play();
+
+    public void addPlayer(Player player){
+        players.add(player);
+    }
 
     /**
      * When the game is over, use this method to declare and display a winning player.

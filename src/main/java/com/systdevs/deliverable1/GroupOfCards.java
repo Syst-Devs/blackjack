@@ -3,7 +3,7 @@
  * Students can modify and extend to implement their game.
  * Add your name as an author and the date!
  */
-package ca.sheridancollege.project;
+package com.systdevs.deliverable1;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,13 +16,13 @@ import java.util.Collections;
  * @author Paul Bonenfant Jan 2020
  */
 public class GroupOfCards {
-
     //The group of cards, stored in an ArrayList
     private ArrayList<Card> cards;
     private int size;//the size of the grouping
 
     public GroupOfCards(int size) {
         this.size = size;
+        this.cards = new ArrayList<>();
     }
 
     /**
@@ -34,8 +34,17 @@ public class GroupOfCards {
         return cards;
     }
 
+    public void setCards(ArrayList<Card> cards){
+        this.cards = cards;
+    }
+
+
     public void shuffle() {
         Collections.shuffle(cards);
+    }
+
+    public Card dealCard(){
+        return (cards.remove(0));
     }
 
     /**
@@ -50,6 +59,18 @@ public class GroupOfCards {
      */
     public void setSize(int size) {
         this.size = size;
+    }
+
+    public void createDeckOfCards(){
+        String[] suits = {"Clubs","Hearts","Spades","Diamonds"};
+        String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
+        int[] values = {2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11};
+
+        for (int i = 0; i < suits.length; i++){
+            for (int x = 0; x < ranks.length; x++){
+                cards.add(new applyCard(suits[i], ranks[x], values[x]));
+            }
+        }
     }
 
 }//end class

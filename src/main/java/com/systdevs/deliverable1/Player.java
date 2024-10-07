@@ -3,7 +3,8 @@
  * Students can modify and extend to implement their game.
  * Add your name as an author and the date!
  */
-package ca.sheridancollege.project;
+package com.systdevs.deliverable1;
+import java.util.ArrayList;
 
 /**
  * A class that models each Player in the game. Players have an identifier, which should be unique.
@@ -14,6 +15,8 @@ package ca.sheridancollege.project;
 public abstract class Player {
 
     private String name; //the unique name for this player
+    private ArrayList<Card> hand;
+    private int score;
 
     /**
      * A constructor that allows you to set the player's unique ID
@@ -22,6 +25,8 @@ public abstract class Player {
      */
     public Player(String name) {
         this.name = name;
+        this.hand = new ArrayList<>();
+        this.score = 0;
     }
 
     /**
@@ -39,6 +44,36 @@ public abstract class Player {
     public void setName(String name) {
         this.name = name;
     }
+
+    public ArrayList<Card> getHand(){
+        return hand;
+    }
+
+    public int getScore(){
+        return score;
+    }
+
+    public void addCard(Card card){
+        hand.add(card);
+        score += card.getValue();
+    }
+
+    public void resetGame(){
+        hand.clear();
+        score = 0;
+    }
+
+    public boolean isBust(){
+        if (score > 21){
+            return true;
+        }
+
+        else{
+            return false;
+        }
+    }
+
+
 
     /**
      * The method to be overridden when you subclass the Player class with your specific type of Player and filled in
