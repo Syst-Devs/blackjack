@@ -1,5 +1,6 @@
 package com.systdevs.deliverable1;
 
+// Class extends the abstract Player class
 public class applyPlayer extends Player {
 
     // Constructor for passing name to abstract class Player.java
