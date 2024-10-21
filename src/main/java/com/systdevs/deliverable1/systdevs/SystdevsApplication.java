@@ -10,8 +10,11 @@ public class SystdevsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SystdevsApplication.class, args);
-
+		
+		// Creating an instance of applyGame with the game name "Blackjack"
 		applyGame blackJackGame = new applyGame("Blackjack");
+
+		// Starting the Blackjack game
 		blackJackGame.play();
 
 		

@@ -13,17 +13,19 @@ package com.systdevs.deliverable1;
  */
 public abstract class Card {
 
+    // Declaring the suit, rank and value of the card
     private String suit;
     private String rank;
     private int value;
-    //default modifier for child classes
-
+    
+    // Constructor for setting suit, rank, and value from the child class (applyCard)
     public Card(String suit, String rank, int value ){
         this.suit = suit;
         this.rank = rank;
         this.value = value;
     }
 
+    // Getter method for suit, rank, and value
     public String getSuit(){
         return suit;
     }

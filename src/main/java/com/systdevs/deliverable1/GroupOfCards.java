@@ -16,33 +16,33 @@ import java.util.Collections;
  * @author Paul Bonenfant Jan 2020
  */
 public class GroupOfCards {
-    //The group of cards, stored in an ArrayList
+    
+    // Declaring a cards variable of type array list and the size of the group of cards
     private ArrayList<Card> cards;
-    private int size;//the size of the grouping
+    private int size;
 
+    // Constructor that initializes the size and creates an empty ArrayList for cards
     public GroupOfCards(int size) {
         this.size = size;
         this.cards = new ArrayList<>();
     }
 
-    /**
-     * A method that will get the group of cards as an ArrayList
-     *
-     * @return the group of cards.
-     */
+    // Getter method for the cards
     public ArrayList<Card> getCards() {
         return cards;
     }
 
+    // Setter method for the cards
     public void setCards(ArrayList<Card> cards){
         this.cards = cards;
     }
 
-
+    // Method to shuffle the cards
     public void shuffle() {
         Collections.shuffle(cards);
     }
 
+    // Method to deal (delete) a card from the deck
     public Card dealCard(){
         return (cards.remove(0));
     }
@@ -61,6 +61,8 @@ public class GroupOfCards {
         this.size = size;
     }
 
+    // Method to create a deck of cards, filling the ArrayList cards with all the cards in a standard deck, 
+    // inluding suits, ranks, and interger values for every card
     public void createDeckOfCards(){
         String[] suits = {"Clubs","Hearts","Spades","Diamonds"};
         String[] ranks = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
@@ -73,4 +75,4 @@ public class GroupOfCards {
         }
     }
 
-}//end class
+}

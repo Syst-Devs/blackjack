@@ -12,9 +12,11 @@ import java.util.ArrayList;
  * @author dancye
  * @author Paul Bonenfant Jan 2020
  */
+// 
 public abstract class Player {
 
-    private String name; //the unique name for this player
+    // Declaring the unique name for the player, the hand of cards the player has, and the score of their hand
+    private String name; 
     private ArrayList<Card> hand;
     private int score;
 
@@ -24,6 +26,8 @@ public abstract class Player {
      * @param name the unique ID to assign to this player.
      */
     public Player(String name) {
+
+        // Initializing the player's name, empty hand, and score = 0
         this.name = name;
         this.hand = new ArrayList<>();
         this.score = 0;
@@ -44,25 +48,29 @@ public abstract class Player {
     public void setName(String name) {
         this.name = name;
     }
-
+    // Getter method for the player's hand
     public ArrayList<Card> getHand(){
         return hand;
     }
-
+   
+    // Getter method for the player's score
     public int getScore(){
         return score;
     }
 
+    // Adds a card to the player's hand and updates the score
     public void addCard(Card card){
         hand.add(card);
         score += card.getValue();
     }
 
+    // Resets the hand and score (Not Implemented but should)
     public void resetGame(){
         hand.clear();
         score = 0;
     }
 
+    // Checks if the player's score is over 21 (Dosent work on first hand (Can implement easily if needed))
     public boolean isBust(){
         if (score > 21){
             return true;

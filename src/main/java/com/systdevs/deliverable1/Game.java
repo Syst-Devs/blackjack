@@ -16,9 +16,11 @@ import java.util.ArrayList;
  */
 public abstract class Game {
 
-    private final String name;//the title of the game
-    private ArrayList<Player> players;// the players of the game
+    // Declaring the name of the game and the list of players in the game
+    private final String name;
+    private ArrayList<Player> players;
 
+    // Constructor for setting the name of the game and initializing the list of players
     public Game(String name) {
         this.name = name;
         players = new ArrayList();
@@ -50,6 +52,7 @@ public abstract class Game {
      */
     public abstract void play();
 
+    // Method to add a player to the game (Not used as of now because we are using only one player at this time)
     public void addPlayer(Player player){
         players.add(player);
     }
@@ -59,4 +62,4 @@ public abstract class Game {
      */
     public abstract void declareWinner();
 
-}//end class
+}
