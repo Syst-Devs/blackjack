@@ -54,14 +54,14 @@ public class applyGame extends Game {
             String action = scanner.nextLine();
 
             // If the player chooses to hit, they will be dealt a card and their score will be updated
-            if (action.equals("h")) {
+            if (action.toLowerCase().equals("h")) {
                 player.addCard(deck.dealCard());
                 System.out.println("Player's hand: " + player.getHand() + " (Score: " + player.getScore() + ")");
                 
                 // If the player busts, the dealer wins
                 if (player.isBust()) {
                     System.out.println("Player busted! Dealer wins.");
-                    return;
+                    restartPrompt();
                 }
             } else {
                 break;
@@ -88,11 +88,29 @@ public class applyGame extends Game {
     public void declareWinner() {
         if (dealer.isBust() || player.getScore() > dealer.getScore()) {
             System.out.println("Player wins! With score of: " + player.getScore());
+            restartPrompt();
         } else if (dealer.getScore() > player.getScore()) {
             System.out.println("Dealer wins! With score of: " + dealer.getScore());
+            restartPrompt();
         } else {
             System.out.println("It's a tie!");
+            restartPrompt();
         }
     }
     
+    // Restart prompt method for restarting the game upon the game ending
+    public void restartPrompt() {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompts user for if they want to do another game
+        System.out.println("Do you want to play again? (y/n)");
+        String choice = scanner.nextLine();
+        if (choice.toLowerCase().equals("y")) {
+            // If yes, this lines start a new instance of Blackjack
+            applyGame blackJackGame = new applyGame("Blackjack");
+            blackJackGame.play();
+        }
+        // The scanner close is here, putting it earlier would cause an error
+        scanner.close();
+    }
 }
