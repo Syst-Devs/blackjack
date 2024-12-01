@@ -14,10 +14,15 @@ public class SystdevsApplication {
 		// Creating an instance of applyGame with the game name "Blackjack"
 		applyGame blackJackGame = new applyGame("Blackjack");
 
+		// Initializing the Blackjack game
+		blackJackGame.initializeGame();
+
 		// Starting the Blackjack game
 		blackJackGame.play();
 
-		
+		// Closing the scanner
+		blackJackGame.closeScanner();
+
 	}
 
 }

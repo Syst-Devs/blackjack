@@ -18,7 +18,7 @@ public abstract class Game {
 
     // Declaring the name of the game and the list of players in the game
     private final String name;
-    private ArrayList<Player> players;
+    protected ArrayList<Player> players;
 
     // Constructor for setting the name of the game and initializing the list of players
     public Game(String name) {
@@ -60,6 +60,6 @@ public abstract class Game {
     /**
      * When the game is over, use this method to declare and display a winning player.
      */
-    public abstract void declareWinner();
+    public abstract void declareWinner(Player dealer);
 
 }
